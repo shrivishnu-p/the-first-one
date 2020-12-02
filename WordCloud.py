@@ -5,7 +5,7 @@ import io
 from matplotlib import pyplot as plt
 from collections import Counter
 
-st.beta_set_page_config(page_title='Word cloud generator', page_icon='☁️')
+st.set_page_config(page_title='Word cloud generator', page_icon='☁️')
 
 def wordcloud_gen(string_data):
     text_list = string_data.split('\n')
