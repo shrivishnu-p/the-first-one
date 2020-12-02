@@ -44,7 +44,7 @@ st.write('A simple app to generate wordcloud from txt files based on the frequen
 
 st.sidebar.header('File Uploader')
 uploaded_file = st.sidebar.file_uploader('Upload a file', type=['txt'])
-color = st.sidebar.beta_color_picker('Select background color for wordcloud', '#000000')
+# color = st.sidebar.beta_color_picker('Select background color for wordcloud', '#000000')
 
 if uploaded_file:
     st.sidebar.success(f'Uploaded **{uploaded_file.name}**!')
@@ -55,8 +55,7 @@ if uploaded_file:
     freq = wordcloud_gen(string_data)
     if freq:
             st.write(f'### WordCloud of {uploaded_file.name.split(".")[0]}')
-            cloud = WordCloud(width=1800, height=1400,
-                              background_color=color,
+            cloud = WordCloud(width=1800, height=1400, 
                               stopwords=STOPWORDS).generate_from_frequencies(freq)
             cloud = cloud.to_array()
             fig = plt.figure(figsize=(15, 15), facecolor='w')
